@@ -10,13 +10,9 @@ export default class App extends Component {
     switchSize = false;
     super(props);
     this.state = {
-      corFundo: '#fff',
-      tamanhoLetra: 12
+      corFundo: true,
+      tamanhoLetra: true
     };
-
-
-    this.changeBackground = this.changeBackground.bind(this);
-    this.changeFontSize = this.changeFontSize.bind(this);
 
   }
 
@@ -25,15 +21,6 @@ export default class App extends Component {
     await AsyncStorage.getItem('corFundo').then((value) => {
       this.setState({ corFundo: value });
     })
-  }
-
-  // Toda vez que um state é atualizado
-  async componentDidUpdate(_, prevState) {
-    const corFundo = this.state.corFundo
-
-    if (prevState !== corFundo) {
-      await AsyncStorage.setItem('corFundo', corFundo);
-    }
   }
 
   async setCorFundo(state) {
@@ -74,7 +61,7 @@ export default class App extends Component {
 
         <View style={[this.state.corFundo ? styles.bgDay : styles.bgNight]}>
           <Text style={[this.state.tamanhoLetra ? styles.textSmall : styles.textBig, this.state.corFundo ? styles.textBlack : styles.textWhite]}>
-            "A vingança nunca é plena, mata a alma e a envenena." (Seu Madruga)
+            Quanto mais fortes forem as suas provações maiores serão suas vitórias.
           </Text>
         </View>
 
