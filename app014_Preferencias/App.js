@@ -48,11 +48,12 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.title}>
-        <Text >Pequeno</Text>
+        <Text >Mudar cor de Fundo</Text>
         <Switch
           value={this.state.corFundo}
           onValueChange = {state => this.setCorFundo(state)}
         />
+          <Text >Mudar Tamanho</Text>
          <Switch
           value={this.state.tamanhoLetra}
           onValueChange = {state => this.setTamanhoLetra(state)}
